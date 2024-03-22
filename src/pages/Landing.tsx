@@ -3,8 +3,10 @@ import Images from "../assets/images/images";
 import {
   faArrowRight,
   faCartShopping,
+  faCircleUser,
+  faClipboardCheck,
   faClock,
-  
+  faCreditCard,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button, DescriptionCard } from "../components/atom";
@@ -78,15 +80,17 @@ export default function Landing() {
             icon={faLocationDot}
             text="Hatfield,Hertfordshire"
             description="Get Directions"
+            width="14.5rem"
           />
           <DescriptionCard
             icon={faClock}
             text="Everyday 9am-10pm"
             description="Working Hours"
+            width="14.5rem"
           />
         </div>
       </section>
-      <section className="pt-[7.313rem] ">
+      <section className="py-[9.313rem] ">
         <div className=" flex justify-between ">
           <div className="w-[41rem]">
             <div className=" text-justify flex-col flex gap-3">
@@ -115,13 +119,73 @@ export default function Landing() {
           </div>
           <div className=" relative">
             <div className="w-[30.625rem] h-[29rem] ">
-              <img className="w-full h-full object-contain rounded-[2rem]" src={aboutImg} />
+              <img
+                className="w-full h-full object-contain rounded-[2rem]"
+                src={aboutImg}
+              />
             </div>
             <div className="w-[20.313rem] h-[18rem] absolute top-[25rem] right-[15rem]">
-              <img className="w-full h-full object-contain rounded-[2rem]" src={aboutImg2} />
+              <img
+                className="w-full h-full object-contain rounded-[2rem]"
+                src={aboutImg2}
+              />
             </div>
           </div>
         </div>
+      </section>
+      <section className=" bg-[#FAF8F8] mt-[3.875rem] ">
+        <div className=" text-center pt-[4.75rem]">
+          <h1 className="text-[2.5rem] leading-[3.75rem] font-[600] font-[poppins]">
+            How To Order
+          </h1>
+          <p className="text-[1rem] leading-[3.75rem] font-[400] font-[poppins]">
+            Follow these steps to place an order
+          </p>
+        </div>
+        <div className="flex justify-between px-4 py-[4.75rem]">
+          <DescriptionCard
+            icon={faCircleUser}
+            text="Sign Up"
+            width="18.5rem"
+            height="12.438rem"
+            backgroundColor="white"
+            description="This stage is where you register so you can order a meal ang get it delivered to you"
+          />
+          <DescriptionCard
+            icon={faClipboardCheck}
+            text="Pick a meal"
+            width="18.5rem"
+            height="12.438rem"
+            backgroundColor="white"
+            description="Select any of the meals finely prepared by our chef from our menu"
+          />
+          <DescriptionCard
+            icon={faLocationDot}
+            text="Enter Location"
+            width="18.5rem"
+            height="12.438rem"
+            backgroundColor="white"
+            description="Put in your location so we can know wehre is most convinent for you to rcieve your order"
+          />
+          <DescriptionCard
+            icon={faCreditCard}
+            text="Payment Options"
+            width="18.5rem"
+            height="12.438rem"
+            backgroundColor="white"
+            description="You can either choose to pay on delivery or you can add your card"
+          />
+        </div>
+        <section>
+          <div className=" text-center pt-[2.75rem]">
+            <h1 className="text-[2.5rem] leading-[3.75rem] font-[600] font-[poppins]">
+              Connect With Our Chefs
+            </h1>
+            <p className="text-[1rem] leading-[3.75rem] font-[400] font-[poppins]">
+              Our professionals with experiences to live for
+            </p>
+          </div>
+        </section>
       </section>
     </main>
   );
