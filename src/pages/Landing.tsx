@@ -1,9 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Images from "../assets/images/images";
-import { faCartShopping,} from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faCartShopping,
+  faClock,
+  
+  faLocationDot,
+} from "@fortawesome/free-solid-svg-icons";
+import { Button, DescriptionCard } from "../components/atom";
 
 export default function Landing() {
-  const { logo } = Images;
+  const { logo, introImage, aboutImg, aboutImg2 } = Images;
   return (
     <main className="px-[4.25rem]">
       <header className="flex justify-between items-center py-[1.875rem]">
@@ -28,14 +35,94 @@ export default function Landing() {
               <a href="#">Services</a>
             </li>
             <li className="font-[poppins] text-[1.25rem] leading-[1.875rem] font-[600] ">
-              <a href="#"><FontAwesomeIcon icon={faCartShopping} /> </a>
+              <a href="#">
+                <FontAwesomeIcon icon={faCartShopping} />{" "}
+              </a>
             </li>
           </ul>
         </div>
         <div>
-            <button className="border-[#D26526] border rounded-[0.625rem] px-[1.875rem] py-[0.625rem] font-[poppins] text-[1.25rem] leading-[1.875rem] font-[600] text-[#D26526]">Sign Up</button>
+          <button className="border-[#D26526] border rounded-[0.625rem] px-[1.875rem] py-[0.625rem] font-[poppins] text-[1.25rem] leading-[1.875rem] font-[600] text-[#D26526]">
+            Sign Up
+          </button>
         </div>
       </header>
+
+      <section className="pt-[5.313rem]">
+        <div className="flex">
+          <div className="w-[48.563rem] flex flex-col gap-5">
+            <h1 className="text-[4.063rem] font-[700] leading-[6.094rem] font-[poppins] text-[#000000]">
+              Delivery First, Satisfaction All The Time
+            </h1>
+            <div className="w-[40.563rem]">
+              <p className="text-[1.25rem] leading-[1.875rem] font-[400] font-[poppins] pt-[1rem]">
+                Meal preped with love and care to suit your taste ood time,
+                great taste eat healthy, eat clean , eat real food
+              </p>
+            </div>
+
+            <div>
+              <Button text="Order Now">
+                <FontAwesomeIcon className="px-2" icon={faArrowRight} />
+              </Button>
+            </div>
+          </div>
+          <div className="w-[30.12rem] h-[31.25rem]">
+            <img className="w-full h-full object-contain" src={introImage} />
+          </div>
+        </div>
+      </section>
+      <section className="pt-[3rem]">
+        <div className="flex gap-[3.75rem] justify-center">
+          <DescriptionCard
+            icon={faLocationDot}
+            text="Hatfield,Hertfordshire"
+            description="Get Directions"
+          />
+          <DescriptionCard
+            icon={faClock}
+            text="Everyday 9am-10pm"
+            description="Working Hours"
+          />
+        </div>
+      </section>
+      <section className="pt-[7.313rem] ">
+        <div className=" flex justify-between ">
+          <div className="w-[41rem]">
+            <div className=" text-justify flex-col flex gap-3">
+              <p className="text-[1rem] font-[poppins] font-[600] text-[#D26526]">
+                About us{" "}
+              </p>
+              <h2 className="text-[2.5rem] font-[600] leading-[3.75rem] font-[poppins]">
+                Food Is Very Important For Healthy And Happy Living
+              </h2>
+              <p className="text-[1rem] font-[poppins] font-[500] leading-[2rem]">
+                At chopify we provide you with the best food and services that
+                makes both your taste buds and pocket happy because we are so
+                concernec with customers being happy our prices are very pocket
+                friendly and our delivery service is top notch
+              </p>
+              <p className="text-[1rem] font-[poppins] font-[500] leading-[2rem]">
+                At chopify we provide you with the best food and services that
+                makes both your taste buds and pocket happy because we are so
+                concernec with customers being happy our prices are very pocket
+                friendly and our delivery service is top notch
+              </p>
+            </div>
+            <div className="pt-[3.375rem]">
+              <Button text="Read More" backgroundColor="#D26526" />
+            </div>
+          </div>
+          <div className=" relative">
+            <div className="w-[30.625rem] h-[29rem] ">
+              <img className="w-full h-full object-contain rounded-[2rem]" src={aboutImg} />
+            </div>
+            <div className="w-[20.313rem] h-[18rem] absolute top-[25rem] right-[15rem]">
+              <img className="w-full h-full object-contain rounded-[2rem]" src={aboutImg2} />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
