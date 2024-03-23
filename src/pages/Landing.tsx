@@ -10,9 +10,15 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button, DescriptionCard } from "../components/atom";
+import {
+  faFacebook,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import ChefCard from "../components/atom/ChefCard";
 
 export default function Landing() {
-  const { logo, introImage, aboutImg, aboutImg2 } = Images;
+  const { logo, introImage, aboutImg, aboutImg2, chef1, chef2, chef3 } = Images;
   return (
     <main className="px-[4.25rem]">
       <header className="flex justify-between items-center py-[1.875rem]">
@@ -52,7 +58,7 @@ export default function Landing() {
 
       <section className="pt-[5.313rem]">
         <div className="flex">
-          <div className="w-[48.563rem] flex flex-col gap-5">
+          <div className="min-w-[48.563rem] flex flex-col gap-5">
             <h1 className="text-[4.063rem] font-[700] leading-[6.094rem] font-[poppins] text-[#000000]">
               Delivery First, Satisfaction All The Time
             </h1>
@@ -63,14 +69,16 @@ export default function Landing() {
               </p>
             </div>
 
-            <div>
+            <div className="">
               <Button text="Order Now">
                 <FontAwesomeIcon className="px-2" icon={faArrowRight} />
               </Button>
             </div>
           </div>
-          <div className="w-[30.12rem] h-[31.25rem]">
-            <img className="w-full h-full object-contain" src={introImage} />
+          <div className="w-[51.437rem] flex justify-center">
+            <div className="w-[30.12rem] h-[31.25rem]">
+              <img className="w-full h-full object-contain" src={introImage} />
+            </div>
           </div>
         </div>
       </section>
@@ -185,8 +193,53 @@ export default function Landing() {
               Our professionals with experiences to live for
             </p>
           </div>
+          <div className="flex py-[5.25rem] px-[7.75rem]">
+            <div className="flex flex-col justify-center items-center ">
+              <div className="w-[21.938rem] h-[26.688rem] ">
+                <img
+                  className="w-full h-full object-contain rounded-[0.625rem]"
+                  src={chef1}
+                />
+              </div>
+              <div className=" flex flex-col justify-center items-center py-3">
+                <h3 className="font-[poppins] font-[500] text-[1.25rem] leading-[1.875rem]">
+                  Bobby Brown
+                </h3>
+                <p className="font-[poppins] font-[400] text-[1rem] leading-[1.5rem] opacity-[0.65rem]">
+                  Assistance Chef
+                </p>
+                <div className="flex gap-[1.25rem]">
+                  <a href="#">
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </a>
+                  <a href="#">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </a>
+                  <a href="#">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
       </section>
     </main>
   );
 }
+
+const chef = [
+  {
+    name: "Bobby Brown",
+   // img: chef1,
+    role: "Assistant Chef",
+  },
+  {
+    name: "Lilly Chad",
+    role: "Chef",
+  },
+  {
+    name: "Raj Juan",
+    role: "Assistant Chef",
+  },
+];
