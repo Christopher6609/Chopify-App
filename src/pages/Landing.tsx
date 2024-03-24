@@ -9,16 +9,27 @@ import {
   faCreditCard,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { Button, DescriptionCard } from "../components/atom";
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
+import { Button, DescriptionCard, FoodCard } from "../components/atom";
 import ChefCard from "../components/atom/ChefCard";
 
 export default function Landing() {
-  const { logo, introImage, aboutImg, aboutImg2, chef1, chef2, chef3 } = Images;
+  const {
+    logo,
+    introImage,
+    aboutImg,
+    aboutImg2,
+    chef1,
+    chef2,
+    chef3,
+    foodImg1,
+    galImg1,
+    galImg2,
+    galImg3,
+    galImg4,
+    galImg5,
+    galImg6,
+    reviewImg,
+  } = Images;
   return (
     <main className="px-[4.25rem]">
       <header className="flex justify-between items-center py-[1.875rem]">
@@ -193,36 +204,114 @@ export default function Landing() {
               Our professionals with experiences to live for
             </p>
           </div>
-          <div className="flex py-[5.25rem] px-[7.75rem]">
-            <div className="flex flex-col justify-center items-center ">
-              <div className="w-[21.938rem] h-[26.688rem] ">
-                <img
-                  className="w-full h-full object-contain rounded-[0.625rem]"
-                  src={chef1}
-                />
+          <div className="flex justify-between py-[5.25rem] px-[5.75rem]">
+            {chef.map((item) => (
+              <div>
+                <ChefCard img="" name={item.name} role={item.role} />
               </div>
-              <div className=" flex flex-col justify-center items-center py-3">
-                <h3 className="font-[poppins] font-[500] text-[1.25rem] leading-[1.875rem]">
-                  Bobby Brown
-                </h3>
-                <p className="font-[poppins] font-[400] text-[1rem] leading-[1.5rem] opacity-[0.65rem]">
-                  Assistance Chef
-                </p>
-                <div className="flex gap-[1.25rem]">
-                  <a href="#">
-                    <FontAwesomeIcon icon={faFacebook} />
-                  </a>
-                  <a href="#">
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </a>
-                  <a href="#">
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </a>
-                </div>
+            ))}
+          </div>
+        </section>
+        <section>
+          <div className=" text-center pt-[2.75rem]">
+            <h1 className="text-[2.5rem] leading-[3.75rem] font-[600] font-[poppins]">
+              Popular food items here
+            </h1>
+            <p className="text-[1rem] leading-[3.75rem] font-[400] font-[poppins]">
+              We offer you different taste to satisy your buds
+            </p>
+          </div>
+          <div className="py-[5.25rem] px-[5.75rem] flex justify-between">
+            <div className="w-[16.625rem] h-[28rem] bg-[#D26526] bg-opacity-40 p-8 rounded-[0.625rem] flex gap-[2.563rem] flex-col items-center">
+              <Button text="Platter" backgroundColor="white" color="black" />
+              <Button text="Dessert" backgroundColor="white" color="black" />
+              <Button text="Entree" backgroundColor="white" color="black" />
+              <Button text="Drinks" backgroundColor="white" color="black" />
+            </div>
+            <div className=" w-[70rem]">
+              <div className="flex-wrap flex justify-between space-y- px-[2rem] ">
+                {foodItem.map((item) => (
+                  <FoodCard
+                    food={item.food}
+                    description={item.description}
+                    price={item.price}
+                    img={item.img}
+                  />
+                ))}
               </div>
             </div>
           </div>
         </section>
+      </section>
+      <section>
+        <div className=" text-center pt-[2.75rem]">
+          <h1 className="text-[2.5rem] leading-[3.75rem] font-[600] font-[poppins]">
+            Our Gallery
+          </h1>
+          <p className="text-[1rem] leading-[3.75rem] font-[400] font-[poppins]">
+            Giving you a look through of some of our best seller over the year
+          </p>
+        </div>
+        <div className="flex justify-between py-[5.25rem] px-[5.75rem]">
+          <div className="space-y-[2rem]">
+            <div className="w-[24.5rem] h-[18.25rem]">
+              <img className="w-full h-full object-contain" src={galImg1} />
+            </div>
+            <div className="w-[24.5rem] h-[18.25rem]">
+              <img className="w-full h-full object-contain" src={galImg2} />
+            </div>
+          </div>
+          <div className="space-y-[2rem]">
+            <div className="w-[22.375rem] h-[31.875rem]">
+              <img className="w-full h-full object-contain" src={galImg3} />
+            </div>
+            <div className="w-[22.375rem] h-[14.313rem]">
+              <img className="w-full h-full object-contain" src={galImg4} />
+            </div>
+          </div>
+          <div className="space-y-[2rem]">
+            <div className="w-[15.875rem] h-[19.25rem]">
+              <img className="w-full h-full object-contain" src={galImg5} />
+            </div>
+            <div className="w-[15.875rem] h-[19.25rem]">
+              <img className="w-full h-full object-contain" src={galImg6} />
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <Button text="Explore More" />
+        </div>
+      </section>
+      <section className="pt-[10rem]">
+        <div className="flex px-[13.438rem] justify-between items-center">
+          <div className="w-[30.75rem] space-y-6">
+            <div>
+              <h2 className="text-[2.5rem] font-[poppins] leading-[3.75rem] font-[600]">
+                Reviews
+              </h2>
+              <p className="text-[1rem] font-[poppins] leading-[1.5rem] font-[600]">
+                What our custormers have to say about our services
+              </p>
+            </div>
+            <div>
+              <p className="text-[1rem] font-[poppins] leading-[1.5rem] font-[300] text-justify">
+                The food here is the best the ciustomer service is top notch
+                delivery is fast and they delivery the exact thing you order for
+                For someone like me who is alway busy and has absolutely no time
+                to go our anad get food chopify has come to my rescue so many
+                times kudos for job well done
+              </p>
+              <h4 className="text-[1rem] font-[poppins] leading-[3.75rem] font-[600] underline">
+                Lilly Reeves
+              </h4>
+            </div>
+          </div>
+          <div>
+            <div className="w-[34rem] h-[35rem]">
+              <img className="w-full h-full oblect-contain" src={reviewImg} />
+            </div>
+          </div>
+        </div>
       </section>
     </main>
   );
@@ -231,15 +320,61 @@ export default function Landing() {
 const chef = [
   {
     name: "Bobby Brown",
-   // img: chef1,
+
     role: "Assistant Chef",
   },
   {
     name: "Lilly Chad",
+    img: "chef1",
     role: "Chef",
   },
   {
     name: "Raj Juan",
+    img: "chef1",
     role: "Assistant Chef",
+  },
+];
+const foodItem = [
+  {
+    img: "foodImg1",
+    food: "Spicy Noodles",
+    description:
+      "Spicy noodles is a very nice noodle that tests your buds they are very unique and made with a special recipe",
+    price: "N4,000",
+  },
+  {
+    img: "foodImg1",
+    food: "Rice and Lamb",
+    description:
+      "Rice and lamb is a very nice meal that tests your buds they are very unique and made with a special recipe",
+    price: "N6,500",
+  },
+  {
+    img: "foodImg1",
+    food: "Afang and Fufu",
+    description:
+      "Afang and fufu is a very nice meal that tests your buds they are very unique and made with a special recipe ",
+    price: "N5,500",
+  },
+  {
+    img: "foodImg1",
+    food: "Couscous",
+    description:
+      "Couscous is a very nice meal that tests your buds they are very unique and made with a special recipe ",
+    price: "N3,500",
+  },
+  {
+    img: "foodImg1",
+    food: "Pasta and tomato sauce",
+    description:
+      "Pasta is a very nice meal that tests your buds they are very unique and made with a special recipe ",
+    price: "N4,500",
+  },
+  {
+    img: "foodImg1",
+    food: "Chicken Burger",
+    description:
+      "Chicken Burger is a very nice meal that tests your buds they are very unique and made with a special recipe ",
+    price: "N4,500",
   },
 ];

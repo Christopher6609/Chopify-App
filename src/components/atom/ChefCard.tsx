@@ -1,16 +1,17 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type props = {
-  icon: IconProp;
   name: string;
   role: string;
   img: string;
 };
 
-export default function ChefCard({ icon, name, role, img }: props) {
+export default function ChefCard({ name, role, img }: props) {
   return (
     <div className="flex flex-col justify-center items-center ">
       <div className="w-[21.938rem] h-[26.688rem] ">
@@ -31,7 +32,7 @@ export default function ChefCard({ icon, name, role, img }: props) {
             <FontAwesomeIcon icon={faFacebook} />
           </a>
           <a href="#">
-            <FontAwesomeIcon icon={faX} />
+            <FontAwesomeIcon icon={faXTwitter} />
           </a>
           <a href="#">
             <FontAwesomeIcon icon={faInstagram} />

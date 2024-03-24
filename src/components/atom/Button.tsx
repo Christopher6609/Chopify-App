@@ -11,12 +11,15 @@ type props = {
 
 export default function button({
   text,
-  
   children,
-  
+  backgroundColor,
+  color,
 }: props) {
   return (
-    <button className="bg-[#D26526] w-[12rem] p-[1rem] text-white rounded-[0.625rem]">
+    <button
+      className="bg-[#D26526] w-[12rem] p-[1rem] text-white rounded-[0.625rem] text-[1rem] font-[poppins] font-[500] leading-[2rem]"
+      style={{ backgroundColor, color }}
+    >
       {text} {children}
     </button>
   );
