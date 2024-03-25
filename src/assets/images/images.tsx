@@ -13,6 +13,7 @@ import galImg4 from "./Rectangle 29.png";
 import galImg5 from "./Rectangle 26.png";
 import galImg6 from "./Rectangle 28.png";
 import reviewImg from "./Frame 44.png"
+import imagereview from "./Ellipse 1.png";
 
  const Images = {
   logo,
@@ -30,6 +31,7 @@ import reviewImg from "./Frame 44.png"
   galImg5,
   galImg6,
   reviewImg,
+  imagereview,
 };
 
 export default Images;

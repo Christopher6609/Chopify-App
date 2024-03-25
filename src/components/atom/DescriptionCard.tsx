@@ -19,9 +19,9 @@ export default function DescriptionCard({
   backgroundColor,
 }: props) {
   return (
-    <div>
+    <div >
       <div
-        className="border  rounded-[0.625rem] flex-col flex gap-4 justify-center items-center text-center px-5 py-5 "
+        className="border rounded-[0.625rem] flex-col flex gap-4 justify-center items-center text-center md:px-5 px-2 py-5 "
         style={{ width, backgroundColor, height }}
       >
         <FontAwesomeIcon className="text-[#D26526] text-[2rem]" icon={icon} />
